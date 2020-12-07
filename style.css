@@ -1,0 +1,1320 @@
+@charset "UTF-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+    border-spacing: 0;
+    
+}
+
+/* 共通部分ーーーーーーーーーーー*/
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "小塚ゴシック Pr6N" ;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.7;
+    color: #333333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 940px;
+    position: relative;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.containerp {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 940px;
+    position: relative;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* HAEDER------------------*/
+
+.logo {
+    margin-top: 1%;
+    line-height: 110%;
+}
+
+
+nav {
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+
+.hnavi {
+    display: flex;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 10%;
+    list-style: none;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+
+.hnavi li {
+    margin-left: 36px;
+}
+
+.hnavi a {
+    color: #333333;
+}
+
+.hnavi a:hover {
+    color: #333333;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+/*---------------ハンバーガーメニュー-------------*/
+#nav-drawer {
+    position: relative;
+    margin-top: 200%;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #333;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+
+  .innavi {
+      text-align: left;
+  }
+
+  .hbg {
+      margin-top: 10%;
+  }
+/*---------------ハンバーガーメニュー-------------*/
+
+
+/* page-news------------------------*/
+
+.page-news {
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newstitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.from {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.notice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.post1 {
+    border-bottom: 2px solid #333333;
+    margin-top: 5%;
+    line-height: 3.0;
+}
+
+.post2 {
+    border-bottom: 2px solid #333333;
+    margin-top: 5%;
+    line-height: 3.0;
+}
+
+
+
+
+
+/* ボタンアニメーション--------------*/
+
+.btn-box {
+    display: block;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    position: relative;
+    border: 2px solid #fff;
+    transition: .4s;
+  }
+  
+  .btn-box:hover {
+    border: 2px solid transparent;
+    color: #333;
+  }
+  
+  .btn-box:before, .btn-box:after {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: .2s;
+  }
+  
+  .btn-box:before {
+    border-bottom: 2px solid #333;
+    border-left: 2px solid #333;
+    transform-origin: 100% 0%;
+  }
+  
+  .btn-box:after {
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform-origin: 0% 100%;
+  }
+  
+  .btn-box:hover:after,
+  .btn-box:hover:before {
+    transform: scale(1);
+  }
+
+  .newsbtn {
+    display: block;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    position: relative;
+    border: 2px solid #333;
+    transition: .4s;
+    margin: 2% 0% 2% auto;
+  }
+
+  .newsbtn:hover {
+    border: 2px solid transparent;
+    color: #04f;
+  }
+
+  .newsbtn:before {
+    border-bottom: 2px solid #04f;
+    border-left: 2px solid #04f;
+    transform-origin: 100% 0%;
+  }
+  
+  .newsbtn:after {
+    border-top: 2px solid #04f;
+    border-right: 2px solid #04f;
+    transform-origin: 0% 100%;
+  }
+
+  /* ボタンアニメーションここまで----------------------------*/
+
+
+  .time1 {
+      background-color: #1a4d86;
+      color: #FFF;
+  }
+
+  .time2 {
+    background-color: #1a4d86;
+    color: #FFF;
+  }
+
+/* Company-----------------------*/
+
+.page-company {
+    margin-top: 20%;
+    display: flex;
+    width: 100%;
+    height: 30%;
+    position: relative;
+    z-index: 9;
+    margin: 0 auto;
+}
+
+.companyimg {
+    display: flex;
+    width: 60%;
+    z-index: 99;
+}
+
+.company {
+    display: flex;
+    background-image: url(img/maintx.jpg);
+    width: 45%;
+    height: 350px;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    z-index: 100;
+}
+
+.companytext {
+    width: 400px;
+    text-align: center;
+    margin: 2% auto 2% 5%;
+}
+
+.companycontents {
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+}
+
+.title2 {
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 2;  
+}
+
+.subtitle2 {
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.companymore {
+    display: flex;
+}
+
+.companybtn {
+    margin: 2% auto 2% 5%;
+}
+
+/* product-----------------------*/
+
+.page-product {
+    margin-top: 20%;
+    display: flex;
+    width: 100%;
+    height: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.productname {
+    white-space: nowrap
+}
+
+.productimg {
+    display: flex;
+    margin-top: 30%;
+    margin-left: auto;
+    width: 60%;
+    z-index: 99;
+}
+
+.product {
+    display: flex;
+    background-image: url(img/subtx.jpg);
+    width: 45%;
+    height: 350px;
+    flex-direction: column;
+    align-items: right;
+    position: absolute;
+    left: 0%;
+    top: 75%;
+    z-index: 100;
+}
+
+.producttext {
+    width: 400px;
+    text-align: center;
+    margin: 2% 2% 5% auto;
+}
+
+.productcontents {
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+}
+
+.title3 {
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 2;  
+}
+
+.subtitle3 {
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.productmore {
+    display: flex;
+}
+
+.productbtn {
+    margin: 1% 2% 5% auto;
+}
+
+/*--contact-----------------------*/
+
+.contactformjp {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 25%;
+    margin-bottom: 10%;
+}
+
+.contactjpbt {
+    width: 30%;
+    height: 10%;
+    background-color: #1a4d86;
+    display: flex;
+    margin: 2% auto;
+    justify-content: center;
+    padding: 15px 10px 7px 10px;
+}
+
+.contactformimg {
+    width: 10%;
+    height: 10%;
+}
+
+.contactinduction {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+.telinvite {
+    color: #1a4d86;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 10px 10px 7px 10px;
+}
+
+.tellead {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.telset {
+    margin: 0 auto;
+}
+
+.telikon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.telikon img {
+    width: 5%;
+}
+.telnotop {
+    font-size: 1.5rem;
+}
+
+
+/*--news-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+.contenttitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 8% 0 2% 0;
+    font-weight: bolder;
+}
+
+.underbar {
+    text-align: center;
+    margin-top: -2%;
+    margin-bottom: 3%;
+}
+
+.posttitle {
+    margin: 0 auto;
+}
+
+.posttitletext {
+    text-align: left;
+    font-size: 1.1rem;
+    width: 52%;
+    margin: 0 auto 10% auto;
+}
+
+.countrypost {
+    margin-top: 1%;
+}
+
+time {
+    padding: 6px 10px;
+    margin-right: 1rem;
+}
+
+.countrypost1 {
+    margin: 5% 24%;
+    text-align: center;
+    border-bottom: 2px solid #333333;
+    line-height: 3.0;
+}
+
+
+/*--business-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+.businessheader {
+    text-align: center;
+}
+
+.businesstitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 8% 0 2% 0;
+    font-weight: bolder;
+}
+
+.businessdes {
+    width: 80%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.businesslist {
+    display: flex;
+    flex-direction: column;
+}
+
+.businessproduct {
+    text-align: center;
+}
+
+.handlingmaker {
+    font-size: 2rem;
+    margin: 8% 10% 2% 10%;
+    font-weight: bolder;
+}
+
+.handlingproduction {
+    width: 100%;
+    margin: 0 10%;
+}
+
+.productions {
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 216px;
+}
+
+.maker {
+    width: 100%;
+    margin: 0 10%;
+}
+
+.makers {
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 225px;
+}
+
+
+
+
+
+
+/*--product-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+.productheader {
+    text-align: center;
+}
+
+.producttitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 8% 0 2% 0;
+    font-weight: bolder;
+}
+
+.productdes {
+    width: 80%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+
+
+.productline {
+    display: flex;
+}
+
+
+.middle-container {
+    max-width: 1200px;
+    padding: 0 1rem;
+    width: 100%;
+    margin: 15% auto;
+}
+
+.productdes {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.productname {
+    font-size: 1.2rem;   
+}
+
+.product1 {
+    width: 40%;
+    margin-top: 3%;
+}
+
+.productint {
+    display: flex;
+}
+
+.productpic {
+    width: 60%;
+    margin: 3%;
+}
+
+
+.use {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+
+/*--company-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+.greeting {
+    text-align: left;
+    text-align: justify;
+}
+
+.ceo {
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.25rem;
+}
+
+.companyheader {
+    text-align: center;
+}
+
+.companytitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 8% 0 2% 0;
+    font-weight: bolder;
+}
+
+  dl{
+    display:flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  dt{
+    background: #ddd;
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc; 
+  }
+  dd{
+    padding: 10px;
+    margin: 0;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc; 
+    width: 70%;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  .send {
+    width: 100%;
+  }
+
+
+.historylist {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 5% 25%;
+    }
+
+.h {
+    margin: 10%;
+}
+
+.gaide {
+    margin-bottom: 2%;
+}
+
+.map {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+
+/*--contact-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+dl {
+    min-width: 70%;
+    max-width: 90%;
+    margin: 5rem auto 5rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+}
+dd {
+    border-right: 1px solid #ccc;
+} 
+
+input[type="text"] {
+    height: 3rem;
+    width: 100%;
+}
+
+input[type="text"], select {
+    box-shadow: none;
+    font-size: 16px;
+    height: 3rem;
+}
+
+input {
+    height: 3.5rem;
+    letter-spacing: 2px;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+}
+
+.send {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-right: none;
+    border-left: none;
+  }
+
+
+
+.required:after {
+    content: "必須";
+    background-color:#eb9a2c;
+}
+
+.optional:after, .required:after {
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    padding: 0 .4rem;
+    margin-left: .5rem;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+    top: -1px;
+}
+
+
+/* ボタンアニメーション--------------*/
+.checkbutton {
+    display: block;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    position: relative;
+    border: 2px solid #fff;
+    transition: .4s;
+  }
+  
+  .checkbutton:hover {
+    border: 2px solid transparent;
+    color: #333;
+  }
+  
+  .checkbutton:before, .checkbutton:after {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: .2s;
+  }
+  
+  .checkbutton:before {
+    border-bottom: 2px solid #333;
+    border-left: 2px solid #333;
+    transform-origin: 100% 0%;
+  }
+  
+  .checkbutton:after {
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform-origin: 0% 100%;
+  }
+  
+  .checkbutton:hover:after,
+  .checkbutton:hover:before {
+    transform: scale(1);
+  }
+
+  .checkbutton {
+    display: block;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    position: relative;
+    border: 2px solid #333;
+    transition: .4s;
+    margin: 2% 0% 2% auto;
+  }
+
+  .checkbutton:hover {
+    border: 2px solid transparent;
+    color: #04f;
+  }
+
+  .checkbutton:before {
+    border-bottom: 2px solid #04f;
+    border-left: 2px solid #04f;
+    transform-origin: 100% 0%;
+  }
+  
+  .checkbutton:after {
+    border-top: 2px solid #04f;
+    border-right: 2px solid #04f;
+    transform-origin: 0% 100%;
+  }
+/* ボタンアニメーションここまで---------------------*/
+
+
+/*--contactdone-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+  .thanksbox {
+      text-align: center;
+      margin: 10%;
+  }
+
+  .thanks {
+    font-size: 2rem;
+    margin-bottom: 5%;
+  }
+
+  .thankstext {
+      font-size: 1.25rem;
+  }
+
+/*--contactdone-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+.sitemap {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+
+}
+
+.h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.privacy {
+    text-align: left;
+}
+
+.privacy2 {
+    margin-top: 2%;
+    text-align: left;
+}
+
+.privacyul {
+    margin-top: 1%;
+}
+
+.p {
+    text-align: left;
+}
+
+/*--newsmore-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+.newsmoreheader {
+    text-align: center;
+}
+
+.newsmoretitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 8% 0 2% 0;
+    font-weight: bolder;
+}
+
+.detail {
+    text-align: center;
+    margin: 10% 15%;
+}
+
+.indetail {
+    text-align: left;
+    margin: 10% 0;
+}
+
+.holiday {
+    font-size: 1.5rem;
+}
+
+.holidays {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+/*--Footer-----------------------*/
+
+footer {
+    background-image: url(img/footer.jpg);
+    width: 100%;
+    height: 30%;
+}
+
+.containerf {
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+.display-flex {
+    display: flex;
+}
+
+
+.footer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footerleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5% 5% 5% 10%;
+    color: #FFF;
+    width: 50%;
+}
+
+.fnav a {
+    color: #fff;
+}
+
+.fnav a:hover {
+    color: #fff;
+}
+
+.footerlogo {
+    margin-bottom: 3%;
+}
+
+.footerright {
+    width: 50%;
+    height: 20%;
+    margin: 5%;
+    color: #FFF;
+}
+
+.fnav {
+    width: 525px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+    
+.f {    
+    margin-bottom:30px;
+    width:160px;
+}
+
+.footerlast {
+    color: #fff;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--レスポンシブ-------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
+
+
+
+@media screen and (max-width: 768px) {
+
+/* 共通部分ーーーーーーーーーーー*/
+
+    test {
+
+    flex: none;
+    }
+    
+    img {
+        width: 100% ;
+    }
+
+    .underbar {
+        margin: 0 auto 10%;
+        width: 60%;
+    }
+
+/*--header----------------------------*/
+    .hnav {
+        display:none;
+    }
+
+
+/*--news--------------------------------*/
+
+    .countrypost1 {
+        margin-bottom: 15%;
+    }
+
+/*--contact--------------------------------*/
+
+    dl{
+        flex-flow: column nowrap;
+        width: 90%;
+      }
+
+      dt,
+      dd{
+        width: 100%;
+      }
+
+      dd{
+        border-left: none;
+     }
+
+     input[type=text], input[type=email], input[type=tel], input[type=num], textarea {
+        padding: 0.25rem;
+     }
+
+/*--product--------------------------------*/
+
+    .sideline {
+         width: 30%;
+     }
+
+    .productint {
+        display: flex;
+        flex-direction: column;
+
+    }
+     
+
+
+/*--company--------------------------------*/
+
+     dt {
+        font-weight: bolder;
+     }
+
+
+
+
+    .gmap {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+
+    .gmap iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+     
+/*--company--------------------------------*/
+
+    dd {
+        border-left: 1px solid #ccc;
+    }
+
+
+/*--footer--------------------------------*/
+
+     .fnav {
+        text-align: center;
+        display: block;
+     }
+
+     .f {
+         text-align: left;
+     }
+
+     .footerright {
+         display: none;
+     }
+
+     .footerlogo {
+         width: 40%;
+     }
+    
+     .containerf .display-flex {
+         display: none;
+     }
+     
+
+     .footerleft {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: nowrap;
+         flex-direction: row;
+     }
+
+     .footertext{
+         width: 50%;
+     }
+
+    }
+
+
+
+
+
+@media screen and (min-width:769px) {
+
+    #nav-open {
+        display:none;
+    }
+
+    }
+    
+
+   
